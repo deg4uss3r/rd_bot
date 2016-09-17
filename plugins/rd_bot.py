@@ -18,7 +18,7 @@ def get_weather(city):
     return response
 
 def process_message(data):
-    print(data)
+    #print(data) 
     channel = data['channel']
 
     try:
