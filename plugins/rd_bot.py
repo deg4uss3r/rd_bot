@@ -12,8 +12,8 @@ def get_weather(city):
     r = r_block.json()
     temp = r['main']['temp']
     wind = r['wind']['speed']
-    country = r['sys'['country']
-    city_name = r['id']['name']
+    country = r['sys']['country']
+    city_name = r['sys']['name']
 
     response = " Current weather for " + city_name + ", " + country + str(temp) + " wind speed: " + str(wind)
 
