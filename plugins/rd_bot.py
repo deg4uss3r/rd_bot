@@ -13,9 +13,9 @@ def get_weather(city):
     temp = r['main']['temp']
     wind = r['wind']['speed']
     country = r['sys'['country']
-    city = r['id']['name']
+    city_name = r['id']['name']
 
-    response = " Current weather for " + city + ", " + country + str(temp) + " wind speed: " + str(wind)
+    response = " Current weather for " + city_name + ", " + country + str(temp) + " wind speed: " + str(wind)
 
     return response
 
