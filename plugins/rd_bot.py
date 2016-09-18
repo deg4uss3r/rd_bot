@@ -16,7 +16,6 @@ def get_weather(city):
     city_name = r['sys']['name']
 
     response = " Current weather for " + city_name + ", " + country + str(temp) + " wind speed: " + str(wind)
-
     return response
 
 
@@ -27,7 +26,6 @@ def get_beers(pub):
     
 
 def process_message(data):
-    #print(data) 
     channel = data['channel']
 
     try:
@@ -38,8 +36,9 @@ def process_message(data):
         content = ''
         user = ''
 
-    if channel == 'C1WFG1BS8' and '<@U2CEQ0RR6>' in content and 'get weather' in content:
+    if content[:12] == '<@U2CEQ0RR6>' and 'get weather' in content:
         city = content[content.index('weather')+8:]
         output = user
         output += get_weather(city)
+	print(channel)
         outputs.append([channel, output]) 
