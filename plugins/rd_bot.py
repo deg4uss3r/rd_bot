@@ -76,6 +76,7 @@ def get_beers(city):
         b_block = requests.get(UNTAPPD)
         b = b_block.json()
         beer_list = b['response']['checkins']['items']
+
     except:
         print("fatal error with parsing untappd response")
         sys.exit(1)
@@ -84,7 +85,7 @@ def get_beers(city):
     beer_exists_flag = False
 
     for i in beer_list:
-        beer_sentence = "* " + i['beer']['beer_name'] + " (" +  i['beer']['beer_style'] + ") by " + i['brewery']['brewery_name'] + " at " + i['venue']['venue_name'] 
+        beer_sentence = "*  *" + i['beer']['beer_name'] + "* (" +  i['beer']['beer_style'] + ") by *" + i['brewery']['brewery_name'] + "* at *" + i['venue']['venue_name'] + "* on " + i['created_at'][5:-6] 
         beer_sentence.encode('UTF-8')
         beer_name = i['beer']['beer_name']
         beer_name.encode('UTF-8')
